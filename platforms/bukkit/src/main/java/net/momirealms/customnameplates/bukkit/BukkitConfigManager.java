@@ -78,9 +78,8 @@ public class BukkitConfigManager extends ConfigManager {
             if (url == null) {
                 return null;
             }
-            URLConnection connection = url.openConnection();
-            connection.setUseCaches(false);
-            return connection.getInputStream();
+
+            return url.openStream();
         } catch (IOException ex) {
             return null;
         }

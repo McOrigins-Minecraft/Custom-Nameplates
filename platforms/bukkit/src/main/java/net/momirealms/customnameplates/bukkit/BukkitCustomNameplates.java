@@ -326,7 +326,7 @@ public class BukkitCustomNameplates extends CustomNameplates implements Listener
 
     @Override
     public InputStream getResourceStream(String filePath) {
-        return getBootstrap().getResource(filePath.replace("\\", "/"));
+        return getBootstrap().getClass().getClassLoader().getResourceAsStream(filePath.replace("\\", "/"));
     }
 
     @Override
