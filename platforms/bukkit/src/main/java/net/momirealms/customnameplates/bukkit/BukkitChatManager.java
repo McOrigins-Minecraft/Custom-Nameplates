@@ -36,31 +36,7 @@ public class BukkitChatManager extends AbstractChatManager {
 
     @Override
     protected void setUpPlatformProvider() {
-        if (ConfigManager.chatTrChat() && Bukkit.getPluginManager().isPluginEnabled("TrChat")) {
-            this.chatProvider = new TrChatProvider(plugin, this);
-            plugin.getPluginLogger().info("TrChat hooked!");
-        } else if (ConfigManager.chatVenture() && Bukkit.getPluginManager().isPluginEnabled("VentureChat")) {
-            this.chatProvider = new VentureChatProvider(plugin, this);
-            plugin.getPluginLogger().info("VentureChat hooked!");
-        } else if (ConfigManager.chatHusk() && Bukkit.getPluginManager().isPluginEnabled("HuskChat")) {
-            this.chatProvider = new HuskChatProvider(plugin, this);
-            plugin.getPluginLogger().info("HuskChat hooked!");
-        } else if (ConfigManager.chatCarbon() && Bukkit.getPluginManager().isPluginEnabled("CarbonChat")) {
-            this.chatProvider = new CarbonChatProvider(plugin, this);
-            plugin.getPluginLogger().info("CarbonChat hooked!");
-        } else if (ConfigManager.chatAdvanced() && Bukkit.getPluginManager().isPluginEnabled("AdvancedChat")) {
-            this.chatProvider = new AdvancedChatProvider(plugin, this);
-            plugin.getPluginLogger().info("AdvancedChat hooked!");
-        } else if (ConfigManager.chatEss() && Bukkit.getPluginManager().isPluginEnabled("EssentialsChat")) {
-            this.chatProvider = new EssentialsChatProvider(plugin, this);
-            plugin.getPluginLogger().info("EssentialsChat hooked!");
-        } else if (ConfigManager.chatChatControlRed() && Bukkit.getPluginManager().isPluginEnabled("ChatControl")) {
-            this.chatProvider = new ChatControlRedProvider(plugin, this);
-            plugin.getPluginLogger().info("ChatControl hooked!");
-        } else if (ConfigManager.chatChatty() && Bukkit.getPluginManager().isPluginEnabled("Chatty")) {
-            this.chatProvider = new ChattyProvider(plugin, this);
-            plugin.getPluginLogger().info("Chatty hooked!");
-        } else if (VersionHelper.isPaperOrItsForks()) {
+        if (VersionHelper.isPaperOrItsForks()) {
             this.chatProvider = new PaperAsyncChatProvider(plugin, this);
         } else {
             this.chatProvider = new AsyncChatProvider(plugin, this);

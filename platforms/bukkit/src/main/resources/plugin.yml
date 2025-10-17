@@ -10,13 +10,6 @@ softdepend:
   - ECosmetics
   - ItemsAdder
   - Oraxen
-  - TrChat
-  - CarbonChat
-  - HuskChat
-  - AdvancedChat
-  - VentureChat
-  - EssentialsChat
-  - ChatControlRed
   - WorldGuard
   - Typewriter
 permissions:
